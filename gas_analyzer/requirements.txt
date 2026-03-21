@@ -39,6 +39,7 @@ python-dotenv>=1.0.0
 loguru>=0.7.0
 tqdm>=4.65.0
 joblib>=1.3.0
+watchdog>=3.0.0        # file watcher for auto-pipeline trigger
 
 # Testing
 pytest>=7.4.0

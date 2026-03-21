@@ -81,11 +81,24 @@ class CSVConnector(BaseConnector):
 
         data = pd.concat(frames, ignore_index=True)
 
+        # Find datetime column: configured name, or first column that parses as datetime
+        date_col = None
         if self.date_column in data.columns:
-            data[self.date_column] = pd.to_datetime(
-                data[self.date_column], format=self.date_format
-            )
-            data = data.set_index(self.date_column).sort_index()
+            date_col = self.date_column
+        else:
+            # Auto-detect: try the first column
+            first = data.columns[0]
+            try:
+                pd.to_datetime(data[first].head(5), format=self.date_format)
+                date_col = first
+                logger.debug("Auto-detected datetime column: '%s'", first)
+            except Exception:
+                pass
+
+        if date_col is not None:
+            data[date_col] = pd.to_datetime(data[date_col], format=self.date_format)
+            data = data.set_index(date_col).sort_index()
+            data.index.name = "timestamp"
 
         logger.info("Loaded %d rows from %d file(s)", len(data), len(files))
         return data

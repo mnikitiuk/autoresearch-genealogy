@@ -105,6 +105,18 @@ data_sources:
     separator: ","
     encoding: "utf-8"
 
+  # Optional: additional named CSV/XLSX sources (merged automatically)
+  # extra_csv:
+  #   - name: "ueex_prices"
+  #     enabled: true
+  #     path: "data/raw/ueex"
+  #     date_column: "date"
+  #     separator: ";"
+  #   - name: "scada_export"
+  #     enabled: true
+  #     path: "data/raw/scada"
+  #     date_column: "timestamp"
+
   database:
     enabled: false
     host: "localhost"
