@@ -1,0 +1,49 @@
+# Core scientific computing
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.11.0
+
+# Machine learning
+scikit-learn>=1.3.0
+xgboost>=1.7.0
+lightgbm>=4.0.0
+
+# Time series forecasting
+statsmodels>=0.14.0
+prophet>=1.1.4
+
+# Deep learning (optional)
+torch>=2.0.0
+# tensorflow>=2.13.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+
+# Data ingestion
+requests>=2.31.0
+pyserial>=3.5
+paho-mqtt>=1.6.1
+openpyxl>=3.1.0
+
+# Database
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+
+# Configuration
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Utilities
+loguru>=0.7.0
+tqdm>=4.65.0
+joblib>=1.3.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Notebooks
+jupyter>=1.0.0
+ipywidgets>=8.0.0

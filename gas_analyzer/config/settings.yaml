@@ -1,0 +1,180 @@
+# Gas Analyzer — Main Configuration
+
+project:
+  name: "Gas Analyzer"
+  version: "1.0.0"
+  description: "Gas composition analysis and forecasting system"
+
+# Gas components tracked by the system
+gas_components:
+  - name: methane
+    symbol: CH4
+    unit: "%"
+    normal_range: [85.0, 98.0]
+    alarm_threshold: 80.0
+
+  - name: ethane
+    symbol: C2H6
+    unit: "%"
+    normal_range: [0.5, 5.0]
+    alarm_threshold: 7.0
+
+  - name: propane
+    symbol: C3H8
+    unit: "%"
+    normal_range: [0.1, 2.0]
+    alarm_threshold: 3.0
+
+  - name: butane
+    symbol: C4H10
+    unit: "%"
+    normal_range: [0.0, 0.5]
+    alarm_threshold: 1.0
+
+  - name: nitrogen
+    symbol: N2
+    unit: "%"
+    normal_range: [0.5, 5.0]
+    alarm_threshold: 10.0
+
+  - name: carbon_dioxide
+    symbol: CO2
+    unit: "%"
+    normal_range: [0.0, 2.0]
+    alarm_threshold: 4.0
+
+  - name: hydrogen_sulfide
+    symbol: H2S
+    unit: "ppm"
+    normal_range: [0.0, 4.0]
+    alarm_threshold: 10.0
+
+  - name: oxygen
+    symbol: O2
+    unit: "%"
+    normal_range: [0.0, 0.5]
+    alarm_threshold: 1.0
+
+# Physical / quality parameters
+quality_parameters:
+  - name: calorific_value
+    symbol: HHV
+    unit: "MJ/m3"
+    normal_range: [34.0, 42.0]
+
+  - name: wobbe_index
+    symbol: WI
+    unit: "MJ/m3"
+    normal_range: [47.0, 52.0]
+
+  - name: specific_gravity
+    symbol: SG
+    unit: "relative to air"
+    normal_range: [0.55, 0.65]
+
+  - name: pressure
+    symbol: P
+    unit: "bar"
+    normal_range: [0.0, 100.0]
+
+  - name: temperature
+    symbol: T
+    unit: "°C"
+    normal_range: [-20.0, 60.0]
+
+  - name: flow_rate
+    symbol: Q
+    unit: "m3/h"
+    normal_range: [0.0, 100000.0]
+
+# Data sources
+data_sources:
+  csv:
+    enabled: true
+    path: "data/raw"
+    date_column: "timestamp"
+    date_format: "%Y-%m-%d %H:%M:%S"
+    separator: ","
+    encoding: "utf-8"
+
+  database:
+    enabled: false
+    host: "localhost"
+    port: 5432
+    name: "gas_analyzer"
+    schema: "public"
+    table: "measurements"
+
+  serial:
+    enabled: false
+    port: "/dev/ttyUSB0"
+    baudrate: 9600
+    timeout: 5
+
+  mqtt:
+    enabled: false
+    broker: "localhost"
+    port: 1883
+    topic: "gas/measurements/#"
+    client_id: "gas_analyzer"
+
+# Preprocessing
+preprocessing:
+  outlier_method: "iqr"          # options: iqr, zscore, isolation_forest
+  outlier_threshold: 3.0
+  interpolation_method: "linear" # options: linear, cubic, forward_fill
+  resampling_freq: "1H"          # pandas freq string
+  normalization: "standard"      # options: standard, minmax, robust
+
+# Analysis
+analysis:
+  correlation_method: "pearson"  # options: pearson, spearman, kendall
+  decomposition_period: 24       # hours
+  anomaly_detection:
+    method: "isolation_forest"   # options: isolation_forest, lof, autoencoder
+    contamination: 0.05
+
+# Forecasting
+forecasting:
+  default_model: "prophet"       # options: prophet, sarima, xgboost, lstm
+  horizon: 24                    # hours ahead
+  confidence_interval: 0.95
+  cross_validation_folds: 5
+
+  prophet:
+    yearly_seasonality: true
+    weekly_seasonality: true
+    daily_seasonality: true
+    changepoint_prior_scale: 0.05
+
+  sarima:
+    order: [1, 1, 1]
+    seasonal_order: [1, 1, 1, 24]
+
+  xgboost:
+    n_estimators: 500
+    max_depth: 6
+    learning_rate: 0.05
+    subsample: 0.8
+
+  lstm:
+    units: [64, 32]
+    dropout: 0.2
+    epochs: 100
+    batch_size: 32
+    lookback_window: 48
+
+# Outputs
+outputs:
+  reports_dir: "outputs/reports"
+  plots_dir: "outputs/plots"
+  exports_dir: "outputs/exports"
+  plot_format: "png"             # options: png, svg, html
+  export_format: "csv"           # options: csv, parquet, json
+
+# Logging
+logging:
+  level: "INFO"
+  file: "outputs/gas_analyzer.log"
+  rotation: "10 MB"
+  retention: "30 days"
