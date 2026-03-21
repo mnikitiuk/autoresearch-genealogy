@@ -128,32 +128,71 @@ def run_pipeline(args: argparse.Namespace) -> None:
     test = target_series.iloc[-args.horizon:]
 
     fc_cfg = cfg.get("forecasting", {})
-    prophet = ProphetModel(
-        horizon=args.horizon,
-        changepoint_prior_scale=float(fc_cfg.get("prophet", {}).get("changepoint_prior_scale", 0.05)),
-    )
+    active_models = []
+    results = []
+
+    # XGBoost (always available)
     xgb = XGBoostModel(
         horizon=args.horizon,
         n_estimators=int(fc_cfg.get("xgboost", {}).get("n_estimators", 200)),
     )
-
-    prophet.fit(train)
     xgb.fit(train)
-
-    prophet_result = prophet.predict(steps=args.horizon)
     xgb_result = xgb.predict(steps=args.horizon)
+    active_models.append(xgb)
+    results.append(xgb_result)
 
-    ensemble = EnsembleForecaster([prophet, xgb], weights=[0.5, 0.5], horizon=args.horizon)
-    ensemble.fit(train)
-    ensemble_result = ensemble.predict(steps=args.horizon)
-
-    # Evaluate on test set
     try:
-        xgb_metrics = xgb.evaluate(test, xgb_result.predictions.values[: len(test)])
+        xgb_metrics = xgb.evaluate(test.values, xgb_result.predictions.values[: len(test)])
         xgb_result.metrics = xgb_metrics
-        print(f"  XGBoost RMSE = {xgb_metrics['RMSE']:.4f}, MAE = {xgb_metrics['MAE']:.4f}")
+        print(f"  XGBoost  RMSE={xgb_metrics['RMSE']:.4f}  MAE={xgb_metrics['MAE']:.4f}")
     except Exception as e:
-        print(f"  Metrics not available: {e}")
+        print(f"  XGBoost metrics unavailable: {e}")
+
+    # SARIMA
+    try:
+        from src.forecasting.sarima_model import SARIMAModel
+        sarima_cfg = fc_cfg.get("sarima", {})
+        sarima = SARIMAModel(
+            horizon=args.horizon,
+            order=tuple(sarima_cfg.get("order", [1, 1, 1])),
+            seasonal_order=tuple(sarima_cfg.get("seasonal_order", [1, 1, 1, 24])),
+        )
+        sarima.fit(train)
+        sarima_result = sarima.predict(steps=args.horizon)
+        active_models.append(sarima)
+        results.append(sarima_result)
+        sarima_metrics = sarima.evaluate(test.values, sarima_result.predictions.values[: len(test)])
+        sarima_result.metrics = sarima_metrics
+        print(f"  SARIMA   RMSE={sarima_metrics['RMSE']:.4f}  MAE={sarima_metrics['MAE']:.4f}")
+    except Exception as e:
+        print(f"  SARIMA skipped: {e}")
+
+    # Prophet (optional)
+    try:
+        prophet = ProphetModel(
+            horizon=args.horizon,
+            changepoint_prior_scale=float(fc_cfg.get("prophet", {}).get("changepoint_prior_scale", 0.05)),
+        )
+        prophet.fit(train)
+        prophet_result = prophet.predict(steps=args.horizon)
+        active_models.append(prophet)
+        results.append(prophet_result)
+        print(f"  Prophet  forecast generated ({args.horizon}h)")
+    except ImportError:
+        print("  Prophet skipped (pip install prophet to enable)")
+
+    # Ensemble (only if >1 model)
+    if len(active_models) > 1:
+        weights = [1.0 / len(active_models)] * len(active_models)
+        ensemble = EnsembleForecaster(active_models, weights=weights, horizon=args.horizon)
+        ensemble.fit(train)
+        ensemble_result = ensemble.predict(steps=args.horizon)
+        results.append(ensemble_result)
+        ens_metrics = xgb.evaluate(test.values, ensemble_result.predictions.values[: len(test)])
+        ensemble_result.metrics = ens_metrics
+        print(f"  Ensemble RMSE={ens_metrics['RMSE']:.4f}  MAE={ens_metrics['MAE']:.4f}")
+    else:
+        ensemble_result = results[0]
 
     # ------------------------------------------------------------------
     # 6. Report & visualise
@@ -161,7 +200,7 @@ def run_pipeline(args: argparse.Namespace) -> None:
     print("\n[6/6] Generating reports and plots ...")
     reporter = ReportGenerator()
     reporter.analysis_report(report)
-    reporter.forecast_report([prophet_result, xgb_result, ensemble_result])
+    reporter.forecast_report(results)
 
     if not args.no_plots:
         plotter = GasPlotter()

@@ -12,48 +12,56 @@ gas_components:
     unit: "%"
     normal_range: [85.0, 98.0]
     alarm_threshold: 80.0
+    alarm_direction: low      # alarm when value drops BELOW threshold
 
   - name: ethane
     symbol: C2H6
     unit: "%"
     normal_range: [0.5, 5.0]
     alarm_threshold: 7.0
+    alarm_direction: high
 
   - name: propane
     symbol: C3H8
     unit: "%"
     normal_range: [0.1, 2.0]
     alarm_threshold: 3.0
+    alarm_direction: high
 
   - name: butane
     symbol: C4H10
     unit: "%"
     normal_range: [0.0, 0.5]
     alarm_threshold: 1.0
+    alarm_direction: high
 
   - name: nitrogen
     symbol: N2
     unit: "%"
     normal_range: [0.5, 5.0]
     alarm_threshold: 10.0
+    alarm_direction: high
 
   - name: carbon_dioxide
     symbol: CO2
     unit: "%"
     normal_range: [0.0, 2.0]
     alarm_threshold: 4.0
+    alarm_direction: high
 
   - name: hydrogen_sulfide
     symbol: H2S
     unit: "ppm"
     normal_range: [0.0, 4.0]
     alarm_threshold: 10.0
+    alarm_direction: high
 
   - name: oxygen
     symbol: O2
     unit: "%"
     normal_range: [0.0, 0.5]
     alarm_threshold: 1.0
+    alarm_direction: high
 
 # Physical / quality parameters
 quality_parameters:
@@ -123,7 +131,7 @@ preprocessing:
   outlier_method: "iqr"          # options: iqr, zscore, isolation_forest
   outlier_threshold: 3.0
   interpolation_method: "linear" # options: linear, cubic, forward_fill
-  resampling_freq: "1H"          # pandas freq string
+  resampling_freq: "1h"          # pandas freq string
   normalization: "standard"      # options: standard, minmax, robust
 
 # Analysis

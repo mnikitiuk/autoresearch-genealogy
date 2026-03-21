@@ -67,7 +67,7 @@ class BaseForecastModel(ABC):
         """Compute standard regression metrics."""
         mae = mean_absolute_error(actuals, predictions)
         rmse = np.sqrt(mean_squared_error(actuals, predictions))
-        mape = float(np.mean(np.abs((actuals - predictions) / actuals.clip(lower=1e-8)))) * 100
+        mape = float(np.mean(np.abs((actuals - predictions) / np.clip(actuals, 1e-8, None)))) * 100
         r2 = r2_score(actuals, predictions)
         return {"MAE": mae, "RMSE": rmse, "MAPE": mape, "R2": r2}
 

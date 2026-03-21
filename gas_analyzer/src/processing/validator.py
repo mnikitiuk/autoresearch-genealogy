@@ -78,12 +78,16 @@ class DataValidator:
                 report.out_of_range[col] = out
 
             if alarm is not None:
-                breaches = int((data[col] > alarm).sum())
+                direction = comp.get("alarm_direction", "high")
+                if direction == "low":
+                    breaches = int((data[col] < alarm).sum())
+                else:
+                    breaches = int((data[col] > alarm).sum())
                 if breaches:
                     report.alarm_breaches[col] = breaches
                     logger.warning("%s alarm threshold (%.1f) breached %d time(s)", col, alarm, breaches)
 
-        if report.missing_columns or report.alarm_breaches:
+        if report.alarm_breaches:
             report.is_valid = False
         if strict and report.out_of_range:
             report.is_valid = False

@@ -109,6 +109,14 @@ class SARIMAModel(BaseForecastModel):
             if target is None:
                 raise ValueError("Provide `target` column name when passing a DataFrame")
             self._target = target
-            return data[target].dropna()
-        self._target = str(data.name or "value")
-        return data.dropna()
+            series = data[target].dropna()
+        else:
+            self._target = str(data.name or "value")
+            series = data.dropna()
+
+        # Restore frequency info if missing (required by statsmodels SARIMAX)
+        if isinstance(series.index, pd.DatetimeIndex) and series.index.freq is None:
+            inferred = pd.infer_freq(series.index)
+            if inferred:
+                series = series.asfreq(inferred)
+        return series
