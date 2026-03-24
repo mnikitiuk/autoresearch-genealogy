@@ -8,7 +8,7 @@ build/
 venv/
 .pytest_cache/
 .coverage
-outputs/plots/*.png
+# outputs/plots/*.png  — tracked intentionally
 outputs/plots/*.svg
 outputs/reports/*.html
 outputs/exports/*.csv
