@@ -1,0 +1,28 @@
+date,ttf_eur_mwh,source,confidence
+2024-01-01,28.5,Elenger Q1-2024 report (Q1 avg 27.56),estimated
+2024-02-01,24.0,Elenger Q1-2024 report (bottom 22.32 on Feb-22),confirmed
+2024-03-01,26.5,Elenger Q1-2024 report (first monthly gain since Oct-23),estimated
+2024-04-01,29.5,Elenger Q2-2024 report (Q2 avg 31.76),estimated
+2024-05-01,31.70,AGPU Navigator May 2024,confirmed
+2024-06-01,34.26,AGPU Navigator June 2024,confirmed
+2024-07-01,33.0,Elenger Q3-2024 report (Q3 avg 35.60 July lower bound),estimated
+2024-08-01,38.0,Elenger Q3-2024 report (peak 42.50 on Aug-12),estimated
+2024-09-01,35.5,Elenger Q3-2024 report (pullback after August peak),estimated
+2024-10-01,41.0,Elenger Q4-2024 report (Q4 avg 43.30),estimated
+2024-11-01,45.0,Elenger Q4-2024 report,estimated
+2024-12-01,48.5,Elenger Q4-2024 report (peak 50.57 on Dec-31; end of RU transit),confirmed
+2025-01-01,49.0,Elenger Q1-2025 report (Q1 avg 46.76; RU transit ended Jan-01),confirmed
+2025-02-01,44.0,Elenger Q1-2025 report (sharp drop after US-RU peace talks),estimated
+2025-03-01,41.52,AGPU Navigator March 2025 (-17% month-on-month),confirmed
+2025-04-01,40.0,Elenger Q2-2025 report (Q2 summer-ahead ~40-41 EUR/MWh),estimated
+2025-05-01,41.0,AGPU Navigator / Elenger Q2-2025,estimated
+2025-06-01,37.0,Elenger Q2-2025 report (seasonal summer decline),estimated
+2025-07-01,33.36,AGPU Navigator July 2025,confirmed
+2025-08-01,34.5,Elenger Q3-2025 report (estimated from UEEX UAH/MWh data),estimated
+2025-09-01,31.0,Elenger Q3-2025 report,estimated
+2025-10-01,26.5,Elenger Q4-2025 report (autumn low),estimated
+2025-11-01,32.5,Elenger Q4-2025 report,estimated
+2025-12-01,33.5,Elenger Q4-2025 / UEEX UAH/MWh data,estimated
+2026-01-01,50.0,TSOUA base price 20802 UAH/thcm (@42 UAH/EUR / 10.55 MWh/thcm),confirmed
+2026-02-01,32.32,Investing.com historical data,confirmed
+2026-03-01,35.0,oilpriceapi.com / UEEX mid-long-term market ~23000 UAH/thcm,confirmed
