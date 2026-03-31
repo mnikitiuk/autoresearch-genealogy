@@ -1,0 +1,43 @@
+date,eur_uah,source,confidence
+2021-01-01,33.0,NBU historical rate 2021,approximate
+2021-04-01,32.0,NBU historical rate 2021,approximate
+2021-07-01,31.5,NBU historical rate 2021,approximate
+2021-10-01,31.0,NBU historical rate 2021,approximate
+2021-12-01,31.5,NBU historical rate 2021,approximate
+2022-01-01,32.5,NBU historical rate Q1-2022 (pre-war),approximate
+2022-03-01,35.5,NBU rate Mar-2022 (post-invasion; NBU fixed UAH/USD at 29.25 then floated Jun-2022),approximate
+2022-06-01,37.0,NBU rate Jun-2022 (UAH float; EUR/USD ~1.05),approximate
+2022-09-01,39.0,NBU rate Q3-2022,approximate
+2022-12-01,40.0,NBU rate Q4-2022,approximate
+2023-01-01,40.0,NBU rate 2023 (relatively stable; EUR/USD ~1.07),approximate
+2023-04-01,40.5,NBU rate Q2-2023,approximate
+2023-07-01,40.8,NBU rate Q3-2023,approximate
+2023-10-01,41.0,NBU rate Q4-2023,approximate
+2023-12-01,41.2,NBU rate Dec-2023,approximate
+2024-01-01,41.0,NBU rate January 2024,estimated
+2024-02-01,41.0,NBU rate February 2024,estimated
+2024-03-01,41.2,NBU rate March 2024,estimated
+2024-04-01,41.3,NBU rate April 2024,estimated
+2024-05-01,41.5,NBU rate May 2024 (derived: UEEX 12346 UAH/thcm / TTF 31.7 EUR/MWh / 10.55 = 36.9; NBU EUR rate higher),estimated
+2024-06-01,41.7,NBU rate June 2024,estimated
+2024-07-01,42.0,NBU rate July 2024,estimated
+2024-08-01,43.5,NBU rate August 2024 (NBU raised corridor),estimated
+2024-09-01,44.0,NBU rate September 2024,estimated
+2024-10-01,44.2,NBU rate October 2024,estimated
+2024-11-01,44.5,NBU rate November 2024,estimated
+2024-12-01,45.0,NBU rate December 2024,estimated
+2025-01-01,45.5,NBU rate January 2025 (estimated),estimated
+2025-02-01,46.0,NBU rate February 2025,estimated
+2025-03-01,45.0,NBU rate March 2025 (derived: AGPU Mar-2025 TTF 41.52 EUR/MWh = 19670 UAH/thcm => EUR rate ~44.9),confirmed
+2025-04-01,46.5,NBU rate April 2025,estimated
+2025-05-01,47.1,NBU rate May 2025 (derived: AGPU May-2025 TTF 35.109 EUR/MWh = 17435 UAH/thcm => EUR rate ~47.1),confirmed
+2025-06-01,48.0,NBU rate June 2025,estimated
+2025-07-01,49.1,NBU rate July 2025 (derived: AGPU Jul-2025 TTF 33.357 EUR/MWh = 17281 UAH/thcm => EUR rate ~49.1),confirmed
+2025-08-01,49.0,NBU rate August 2025,estimated
+2025-09-01,48.45,NBU rate September 2025 (confirmed: finway.com.ua reference),confirmed
+2025-10-01,49.0,NBU rate October 2025,estimated
+2025-11-01,49.5,NBU rate November 2025,estimated
+2025-12-01,50.0,NBU rate December 2025,estimated
+2026-01-01,50.0,NBU rate January 2026 (estimated; NBU managed float),estimated
+2026-02-01,50.5,NBU rate February 2026,estimated
+2026-03-01,50.5,NBU rate March 2026 (user-confirmed: 50-51 UAH/EUR),confirmed

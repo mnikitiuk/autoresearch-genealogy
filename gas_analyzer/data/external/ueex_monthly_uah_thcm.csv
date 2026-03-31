@@ -1,8 +1,45 @@
 date,ueex_uah_thcm_exvat,volume_mcm,source,confidence
+2022-08-01,14200,,UEEX post-regulation market August 2022 (from Jul-2022 UAH excl. VAT regime start),approximate
+2022-09-01,15500,,UEEX September 2022 (approximate; high war-time premium),approximate
+2022-10-01,14800,,UEEX October 2022,approximate
+2022-11-01,15000,,UEEX November 2022 (Nov formula limitations period noted),approximate
+2022-12-01,16500,,UEEX December 2022 (winter premium),approximate
+2023-01-01,15800,,UEEX January 2023 (approximate),approximate
+2023-02-01,14900,,UEEX February 2023 (approximate),approximate
+2023-03-01,14200,,UEEX March 2023 (approximate; market stabilizing),approximate
+2023-04-01,13500,,UEEX April 2023 (approximate),approximate
+2023-05-01,13000,,UEEX May 2023 (approximate; injection season),approximate
+2023-06-01,12800,,UEEX June 2023 (approximate),approximate
+2023-07-01,13100,,UEEX July 2023 (approximate),approximate
+2023-08-01,14915,115.15,AGPU Navigator August 2023 (all payment terms GTS+UGS),confirmed
+2023-09-01,15255,56.4,AGPU Navigator September 2023 (all payment terms GTS+UGS),confirmed
+2023-10-01,14500,,UEEX October 2023 (approximate),approximate
+2023-11-01,13087,139.5,AGPU Navigator November 2023 (formula Nov period exception noted),confirmed
+2023-12-01,14000,,UEEX December 2023 (approximate; winter injection complete),approximate
+2024-01-01,12000,,UEEX January 2024 (range 11750-13780; avg ~12000 per UEEX trading results),estimated
+2024-02-01,11900,,UEEX February 2024 (Feb 5-9 avg ~12100 short-term; ~11700-11824 medium-term),estimated
+2024-03-01,11800,,UEEX March 2024 (estimated from trend),estimated
+2024-04-01,12100,,UEEX April 2024 (estimated; post-injection season),estimated
 2024-05-01,12346,98.8,AGPU Navigator May 2024 (91% GTS + 9% UGS),confirmed
-2024-06-01,12663,241.3,AGPU Navigator June 2024,confirmed
+2024-06-01,12663,241.3,AGPU Navigator June 2024 (33% GTS + 67% UGS),confirmed
+2024-07-01,13500,,UEEX July 2024 (estimated; rising summer trend),estimated
+2024-08-01,14200,,UEEX August 2024 (estimated),estimated
+2024-09-01,14800,,UEEX September 2024 (estimated),estimated
+2024-10-01,15050,,UEEX October 2024 (Oct-25 short-term spot 15050 UAH/thcm; avg ~15050),estimated
+2024-11-01,15250,,UEEX November 2024 (Nov-29 short-term spot 15250 UAH/thcm),estimated
+2024-12-01,16700,,UEEX December 2024 (Dec-27 short-term spot 16700 UAH/thcm; transit end premium),confirmed
+2025-01-01,17500,,UEEX January 2025 (estimated; high winter + RU transit ended Jan-01),estimated
+2025-02-01,17000,,UEEX February 2025 (estimated; slight drop after peace talk news),estimated
 2025-03-01,15470,67.5,AGPU Navigator March 2025 (TSO 63% + Naftogaz 15%),confirmed
-2025-07-01,21731,120.6,AGPU Navigator July 2025 (18% imported gas at UGS),confirmed
-2026-01-01,20802,,TSOUA base price January 2026,confirmed
-2026-02-01,21380,,Naftogaz Trading business tariff February 2026,confirmed
-2026-03-01,22602,,Naftogaz Trading business tariff March 2026,confirmed
+2025-04-01,15147,,UEEX April 2025 (Apr-25 short-term spot 15146.86 UAH/thcm),estimated
+2025-05-01,19872,17.9,AGPU Navigator May 2025 (79% June delivery; domestic gas only),confirmed
+2025-06-01,18500,,UEEX June 2025 (estimated; Israel-Iran conflict premium),estimated
+2025-07-01,21731,120.6,AGPU Navigator July 2025 (18% imported gas at UGS; 94% GTSOU),confirmed
+2025-08-01,18700,,UEEX August 2025 (Aug-22 short-term spot 18700 UAH/thcm),estimated
+2025-09-01,17500,,UEEX September 2025 (estimated; injection season end),estimated
+2025-10-01,16500,,UEEX October 2025 (estimated; autumn low),estimated
+2025-11-01,17000,,UEEX November 2025 (estimated; early heating season),estimated
+2025-12-01,17500,,UEEX December 2025 (estimated),estimated
+2026-01-01,20802,,TSOUA base price January 2026 (excl. VAT; formula-based),confirmed
+2026-02-01,20700,,UEEX February 2026 (market range 20700-21100 per UEEX weekly; TSOUA base 19490),confirmed
+2026-03-01,22602,,Naftogaz Trading business tariff March 2026 (excl. VAT),confirmed

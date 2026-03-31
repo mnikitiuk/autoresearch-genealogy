@@ -1,28 +1,64 @@
 date,ttf_eur_mwh,source,confidence
+2021-01-01,20.5,Historical TTF market data 2021 (Statista / Investing.com),approximate
+2021-02-01,19.0,Historical TTF market data 2021,approximate
+2021-03-01,22.5,Historical TTF market data 2021,approximate
+2021-04-01,25.5,Historical TTF market data 2021,approximate
+2021-05-01,28.5,Historical TTF market data 2021,approximate
+2021-06-01,31.5,Historical TTF market data 2021,approximate
+2021-07-01,40.0,Historical TTF market data 2021,approximate
+2021-08-01,49.0,Historical TTF market data 2021,approximate
+2021-09-01,71.0,Historical TTF market data (autumn surge 2021),approximate
+2021-10-01,83.0,Historical TTF market data (winter 2021 spike),approximate
+2021-11-01,95.0,Historical TTF market data 2021,approximate
+2021-12-01,108.0,Historical TTF market data 2021 (year-end peak),approximate
+2022-01-01,87.0,Historical TTF 2022 (correction from Dec peak),approximate
+2022-02-01,92.0,Historical TTF 2022 (pre-war geopolitical tension),approximate
+2022-03-01,126.0,Historical TTF 2022 (full-scale invasion Feb-24 spike; annual avg ~123),approximate
+2022-04-01,110.0,Historical TTF 2022 Q2,approximate
+2022-05-01,98.0,Historical TTF 2022 Q2,approximate
+2022-06-01,131.0,Historical TTF 2022 (NS1 maintenance fears),approximate
+2022-07-01,171.0,Historical TTF 2022 (peak supply concern),approximate
+2022-08-01,238.0,Historical TTF 2022 (crisis peak; max 339.19 on Aug-26; monthly avg approx),approximate
+2022-09-01,195.0,Historical TTF 2022 (post-peak correction),approximate
+2022-10-01,134.0,Historical TTF 2022 (demand destruction + mild autumn),approximate
+2022-11-01,116.0,Historical TTF 2022,approximate
+2022-12-01,94.0,Historical TTF 2022 (EU price cap approved Dec-19),approximate
+2023-01-01,66.0,Historical TTF 2023 (high storage + mild winter; annual avg ~43),approximate
+2023-02-01,52.0,Historical TTF 2023,approximate
+2023-03-01,45.0,Historical TTF 2023,approximate
+2023-04-01,42.0,Historical TTF 2023,approximate
+2023-05-01,37.0,Historical TTF 2023,approximate
+2023-06-01,35.0,Historical TTF 2023,approximate
+2023-07-01,32.0,Historical TTF 2023,approximate
+2023-08-01,35.0,Historical TTF 2023 (minor autumn rebound),approximate
+2023-09-01,37.5,Historical TTF 2023,approximate
+2023-10-01,48.0,Historical TTF 2023 (storage 90%+; EU cap concerns),approximate
+2023-11-01,46.0,Historical TTF 2023,approximate
+2023-12-01,42.0,Historical TTF 2023,approximate
 2024-01-01,28.5,Elenger Q1-2024 report (Q1 avg 27.56),estimated
 2024-02-01,24.0,Elenger Q1-2024 report (bottom 22.32 on Feb-22),confirmed
 2024-03-01,26.5,Elenger Q1-2024 report (first monthly gain since Oct-23),estimated
 2024-04-01,29.5,Elenger Q2-2024 report (Q2 avg 31.76),estimated
 2024-05-01,31.70,AGPU Navigator May 2024,confirmed
 2024-06-01,34.26,AGPU Navigator June 2024,confirmed
-2024-07-01,33.0,Elenger Q3-2024 report (Q3 avg 35.60 July lower bound),estimated
+2024-07-01,33.0,Elenger Q3-2024 report (Q3 avg 35.60),estimated
 2024-08-01,38.0,Elenger Q3-2024 report (peak 42.50 on Aug-12),estimated
 2024-09-01,35.5,Elenger Q3-2024 report (pullback after August peak),estimated
 2024-10-01,41.0,Elenger Q4-2024 report (Q4 avg 43.30),estimated
 2024-11-01,45.0,Elenger Q4-2024 report,estimated
 2024-12-01,48.5,Elenger Q4-2024 report (peak 50.57 on Dec-31; end of RU transit),confirmed
-2025-01-01,49.0,Elenger Q1-2025 report (Q1 avg 46.76; RU transit ended Jan-01),confirmed
-2025-02-01,44.0,Elenger Q1-2025 report (sharp drop after US-RU peace talks),estimated
+2025-01-01,54.0,Elenger Q1-2025 (Q1 avg 46.762; Jan high on RU transit end + cold snap; derived),estimated
+2025-02-01,44.8,Elenger Q1-2025 (sharp drop Feb H2 after US-RU peace talks; Q1 avg 46.762 back-derived),estimated
 2025-03-01,41.52,AGPU Navigator March 2025 (-17% month-on-month),confirmed
-2025-04-01,40.0,Elenger Q2-2025 report (Q2 summer-ahead ~40-41 EUR/MWh),estimated
-2025-05-01,41.0,AGPU Navigator / Elenger Q2-2025,estimated
-2025-06-01,37.0,Elenger Q2-2025 report (seasonal summer decline),estimated
+2025-04-01,36.0,Elenger Q2-2025 (Q2 avg 35.702; Apr drop ~20% on Trump tariff announcement Apr-9),estimated
+2025-05-01,35.1,AGPU Navigator May 2025 (35.109 EUR/MWh weighted avg),confirmed
+2025-06-01,36.0,Elenger Q2-2025 (Israel-Iran spike mid-Jun to 41-42 then fell below 33; Q2 avg 35.702 derived),estimated
 2025-07-01,33.36,AGPU Navigator July 2025,confirmed
-2025-08-01,34.5,Elenger Q3-2025 report (estimated from UEEX UAH/MWh data),estimated
-2025-09-01,31.0,Elenger Q3-2025 report,estimated
-2025-10-01,26.5,Elenger Q4-2025 report (autumn low),estimated
-2025-11-01,32.5,Elenger Q4-2025 report,estimated
-2025-12-01,33.5,Elenger Q4-2025 / UEEX UAH/MWh data,estimated
-2026-01-01,50.0,TSOUA base price 20802 UAH/thcm (@42 UAH/EUR / 10.55 MWh/thcm),confirmed
-2026-02-01,32.32,Investing.com historical data,confirmed
-2026-03-01,35.0,oilpriceapi.com / UEEX mid-long-term market ~23000 UAH/thcm,confirmed
+2025-08-01,34.5,Elenger Q3-2025 (estimated; Q3 ended 31.41 Sep-30; Q3 avg ~32.9 derived),estimated
+2025-09-01,31.0,Elenger Q3-2025 (Q3-end close 31.41; monthly avg derived),estimated
+2025-10-01,26.5,Elenger Q4-2025 (Q4 avg 30.15; Oct seasonal low),estimated
+2025-11-01,32.5,Elenger Q4-2025 (Q4 avg 30.15; Nov $10.43/MMBtu EIA),estimated
+2025-12-01,31.15,Elenger Q4-2025 (low 26.53 in Dec; Q4 avg 30.15 back-derived),estimated
+2026-01-01,46.0,EIA weekly Jan-21-2026 ~$12.40/MMBtu; TSOUA base 20802 UAH/thcm; EU storage ~48% full,estimated
+2026-02-01,32.32,Investing.com historical data (range 29.88-35.69; monthly avg 32.32; storage ~39%),confirmed
+2026-03-01,47.0,OilPriceAPI spot 53.73 EUR/MWh on 31-Mar-2026; Iran conflict mid-Mar spike; monthly avg estimated,estimated
